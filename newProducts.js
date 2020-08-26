@@ -4,7 +4,7 @@ Vue.component('pagination', pagination);
 var app =new Vue({
     el:'#product'
   ,data:{
-    productData: [],
+    products: [],
     tempProduct: {imageUrl: ['']},
     token: '',
     paginationData: {},
@@ -19,7 +19,7 @@ var app =new Vue({
         this.tempProduct = {imageUrl: ['']};
         const getProductsApiPath = `${this.api.path}/api/${this.api.uuid}/admin/ec/products?page=${page}`
         axios.get(getProductsApiPath).then(res => {
-            this.productData = res.data.data;
+            this.products = res.data.data;
             this.paginationData = res.data.meta.pagination;
         }).catch(err => {
             console.log(err);
