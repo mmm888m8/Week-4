@@ -80,7 +80,7 @@ user:{
 }
 }
 ,methods:{
-    login(){
+    signin(){
         const api = `https://course-ec-api.hexschool.io/api/auth/login`;
             axios.post(api, this.user).then((response) => {
               const token = response.data.token;
